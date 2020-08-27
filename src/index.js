@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './styles/sass/style.sass';
+import "../node_modules/bootstrap/dist/css/bootstrap-grid.min"
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
