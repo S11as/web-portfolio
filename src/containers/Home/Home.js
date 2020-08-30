@@ -3,6 +3,7 @@ import Canvas from './canvas/src/js/classes/Canvas';
 import Bubbles from '../../components/Bubbles/Bubbles';
 
 import img from './canvas/src/img/bg.png';
+import Skills from '../../components/Skills/Skills';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -17,6 +18,8 @@ class Home extends React.Component {
     return (
       <section className="page">
         <div id="canvas-pad"/>
+        <Bubbles/>
+        <Skills/>
       </section>
     );
   }

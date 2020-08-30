@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import './styles/sass/style.sass';
 import '../node_modules/reset-css/reset.css';
-import '../node_modules/bootstrap/dist/css/bootstrap-grid.css';
+import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
 
 import App from './containers/App/App';
 import * as serviceWorker from './serviceWorker';
