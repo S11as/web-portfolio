@@ -5,7 +5,7 @@ import './styles/sass/style.sass';
 import '../node_modules/reset-css/reset.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-grid.css';
 
-import App from './components/App';
+import App from './containers/App/App';
 import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <React.StrictMode>

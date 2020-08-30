@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import RedWrapper from './utils/RedWrapper';
+import RedWrapper from '../../utils/RedWrapper';
 
 const Header = (props) => {
   return (

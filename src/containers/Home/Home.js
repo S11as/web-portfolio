@@ -1,6 +1,6 @@
 import React from 'react';
 import Canvas from './canvas/src/js/classes/Canvas';
-
+import Bubbles from '../../components/Bubbles/Bubbles';
 
 import img from './canvas/src/img/bg.png';
 

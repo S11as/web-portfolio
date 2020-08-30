@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
 import {Route} from 'react-router';
-import Home from './pages/home/Home';
+import Home from '../Home/Home';
+import Header from '../../components/Header/Header';
 
 class App extends React.Component {
   render() {
