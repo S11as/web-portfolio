@@ -1,5 +1,7 @@
 import React from 'react';
-import Canvas from './canvas/src/js/classes/Canvas';
+import {Canvas as StarCanvas} from './canvas/src/js/StarCanvas/Canvas';
+import {Canvas as BubbleCanvas} from './canvas/src/js/BubbleCanvas/Canvas';
+
 import Bubbles from '../../components/Bubbles/Bubbles';
 
 import img from './canvas/src/img/bg.png';
@@ -7,10 +9,15 @@ import Skills from '../../components/Skills/Skills';
 
 class Home extends React.Component {
   componentDidMount() {
-    const canvas = new Canvas('canvas-pad', 'Hi, I\'m Kirill,\n' +
+    const starCanvas = new StarCanvas('canvas-pad', 'Hi, I\'m Kirill,\n' +
       'Front-end and Back-end Developer', img);
     setInterval(() => {
-      if (canvas.displayed) canvas.createStar();
+      if (starCanvas.displayed) starCanvas.createStar();
+    }, 1000);
+
+    const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 1000});
+    setInterval(() => {
+      if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
     }, 1000);
   }
 
@@ -18,7 +25,9 @@ class Home extends React.Component {
     return (
       <section className="page">
         <div id="canvas-pad"/>
-        <Bubbles/>
+        <Bubbles>
+          <div id="bubbles"/>
+        </Bubbles>
         <Skills/>
       </section>
     );

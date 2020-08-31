@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import bg from './img/bubbles-bg.png';
 export default class Bubbles extends React.Component {
@@ -27,9 +28,16 @@ export default class Bubbles extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="col">
+              {this.props.children}
+            </div>
           </div>
         </div>
       </section>
     );
   }
 }
+
+Bubbles.propTypes = {
+  children: PropTypes.node,
+};

@@ -55,7 +55,7 @@ class Header extends React.Component {
             <div className="col-auto">
               <nav className="row">
                 <Link to="/" className="col-auto">
-                  <RedWrapper acglobtive={true} font={18}>Hihi</RedWrapper>
+                  <RedWrapper active={true} font={18}>Hihi</RedWrapper>
                 </Link>
                 <Link to="/" className="col-auto">Hihi</Link>
                 <Link to="/" className="col-auto">Hihi</Link>
