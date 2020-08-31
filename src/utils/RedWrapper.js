@@ -8,12 +8,11 @@ class RedWrapper extends React.Component {
       <div className={classNames({
         'col-auto': true,
         'red-wrapper-default': true,
-        'red-wrapper': this.props.active,
-        'big-font': this.props.font,
-      })}>
+        'red-wrapper': this.props.active || this.props.white,
+      })} style={{fontSize: this.props.font}}>
         <div className="row">
           <div className="col red-wrapper-text">
-            {this.props.text}
+            {this.props.children}
           </div>
         </div>
         {this.props.active &&
@@ -28,9 +27,10 @@ class RedWrapper extends React.Component {
 }
 
 RedWrapper.propTypes = {
-  text: PropTypes.string,
   active: PropTypes.bool,
-  font: PropTypes.bool,
+  font: PropTypes.number,
+  white: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 export default RedWrapper;

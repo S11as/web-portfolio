@@ -2,21 +2,10 @@ import React from 'react';
 
 import bg from './img/bubbles-bg.png';
 export default class Bubbles extends React.Component {
-  componentDidUpdate() {
-    this.setHeight();
-  }
-  componentDidMount() {
-    this.setHeight();
-  }
   setHeight() {
-    setTimeout(() => {
-      const container = document.getElementById('description-wrapper');
-      const img = document.getElementById('bubbles-bg');
-      console.log(container);
-      console.log(container.height);
-      console.log(img.height);
-      container.style.height = img.height+'px';
-    }, 100);
+    const container = document.getElementById('description-wrapper');
+    const img = document.getElementById('bubbles-bg');
+    container.style.height = img.height+'px';
   }
   render() {
     return (

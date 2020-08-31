@@ -51,11 +51,11 @@ class Header extends React.Component {
       )}>
         <div className="container">
           <div className="row justify-content-around">
-            <RedWrapper text="Silas" font={true} active={true}/>
+            <RedWrapper font={22} active={true}><span>Silas</span></RedWrapper>
             <div className="col-auto">
               <nav className="row">
                 <Link to="/" className="col-auto">
-                  <RedWrapper text="Hihi" active={true} font={false}/>
+                  <RedWrapper acglobtive={true} font={18}>Hihi</RedWrapper>
                 </Link>
                 <Link to="/" className="col-auto">Hihi</Link>
                 <Link to="/" className="col-auto">Hihi</Link>
