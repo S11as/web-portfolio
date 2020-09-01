@@ -18,7 +18,7 @@ class Home extends React.Component {
     const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 1000});
     setInterval(() => {
       if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
-    }, 1000);
+    }, 2000);
   }
 
   render() {
