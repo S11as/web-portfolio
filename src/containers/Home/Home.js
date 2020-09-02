@@ -15,10 +15,10 @@ class Home extends React.Component {
       if (starCanvas.displayed) starCanvas.createStar();
     }, 1000);
 
-    const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 1000});
+    const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 800});
     setInterval(() => {
       if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
-    }, 2000);
+    }, 1000);
   }
 
   render() {
