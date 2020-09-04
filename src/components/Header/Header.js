@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import anime from 'animejs';
-import RedWrapper from '../../utils/RedWrapper';
+import RedWrapper from '../../utils/RedWrapper/RedWrapper';
 import classNames from 'classnames';
 
 

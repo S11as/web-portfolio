@@ -11,7 +11,8 @@ export default class Bubbles extends React.Component {
   render() {
     return (
       <section>
-        <img src={bg} className="bg-image image-fluid" id="bubbles-bg" onLoad={this.setHeight.bind(this)}/>
+        <img src={bg} className="bg-image image-fluid" id="bubbles-bg"
+          onLoad={this.setHeight.bind(this)}/>
         <div className="container description-wrapper" id="description-wrapper">
           <div className="row h-85 align-items-center">
             <div className="col-7 description-inner-wrapper">

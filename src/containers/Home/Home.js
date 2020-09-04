@@ -6,6 +6,9 @@ import Bubbles from '../../components/Bubbles/Bubbles';
 
 import img from './canvas/src/img/bg.png';
 import Skills from '../../components/Skills/Skills';
+import Projects from '../../components/Projects/Projects';
+import LetsWork from '../../components/LetsWork/LetsWork';
+import Footer from '../../components/Footer/Footer';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -29,6 +32,9 @@ class Home extends React.Component {
           <div id="bubbles"/>
         </Bubbles>
         <Skills/>
+        <Projects/>
+        <LetsWork/>
+        <Footer/>
       </section>
     );
   }

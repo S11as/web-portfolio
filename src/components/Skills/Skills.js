@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import RedWrapper from '../../utils/RedWrapper';
+import RedWrapper from '../../utils/RedWrapper/RedWrapper';
 import classNames from 'classnames';
 
 import img from './img/skills-bg.png';
@@ -33,7 +33,12 @@ class Skills extends React.Component {
       <section>
         <img src={img} className="bg-image"/>
         <div className="container skills-wrapper">
-          <div className="row justify-content-between mb-5">
+          <div className="row justify-content-center skill-headline">
+            <div className="col-auto">
+              My skills
+            </div>
+          </div>
+          <div className="row justify-content-between mb-6">
             <Card>
               <div className="row justify-content-center">
                 {this.createCardInner(cards.frontEnd)}
