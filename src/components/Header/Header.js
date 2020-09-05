@@ -1,19 +1,26 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import anime from 'animejs';
-import RedWrapper from '../../utils/RedWrapper/RedWrapper';
-import classNames from 'classnames';
+import {withRouter} from 'react-router-dom';
 
+import RedWrapper from '../../utils/RedWrapper/RedWrapper';
+import HeaderLink from '../../utils/HeaderLink/HeaderLink';
+
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+
+import navigation from '../../lib/Navigation/navigation';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isBlack: false,
+      nav: [],
     };
   }
 
   componentDidMount() {
+    this.headerSetUp();
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 0) {
         this.setState({
@@ -40,6 +47,27 @@ class Header extends React.Component {
       }
     });
   }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.location !== prevProps.location) {
+      this.headerSetUp();
+    }
+  }
+
+  headerSetUp() {
+    const nav = [];
+    for (const [index, link] of navigation.entries()) {
+      const active = link.to === this.props.location.pathname;
+      console.log(this.props.location.pathname);
+      nav.push(
+          <HeaderLink to={link.to} key={index} active={active}>
+            {link.text}
+          </HeaderLink>,
+      );
+    }
+    this.setState({
+      nav: nav,
+    });
+  }
 
   render() {
     return (
@@ -54,12 +82,7 @@ class Header extends React.Component {
             <RedWrapper font={22} active={true}><span>Silas</span></RedWrapper>
             <div className="col-auto">
               <nav className="row">
-                <Link to="/" className="col-auto">
-                  <RedWrapper active={true} font={18}>Hihi</RedWrapper>
-                </Link>
-                <Link to="/" className="col-auto">Hihi</Link>
-                <Link to="/" className="col-auto">Hihi</Link>
-                <Link to="/" className="col-auto">Hihi</Link>
+                {this.state.nav}
               </nav>
             </div>
           </div>
@@ -69,4 +92,8 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+Header.propTypes = {
+  location: PropTypes.any,
+};
+
+export default withRouter(Header);
