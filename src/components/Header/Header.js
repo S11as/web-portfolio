@@ -57,7 +57,6 @@ class Header extends React.Component {
     const nav = [];
     for (const [index, link] of navigation.entries()) {
       const active = link.to === this.props.location.pathname;
-      console.log(this.props.location.pathname);
       nav.push(
           <HeaderLink to={link.to} key={index} active={active}>
             {link.text}
