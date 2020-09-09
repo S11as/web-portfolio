@@ -4,6 +4,7 @@ import LetsWork from '../../components/LetsWork/LetsWork';
 import {Canvas as StarCanvas} from '../Home/canvas/src/js/StarCanvas/Canvas';
 import Card from '../../components/Card/Card';
 import PrimaryButton from '../../utils/PrimaryButton/PrimaryButton';
+import {Link} from 'react-router-dom';
 import projects from '../../lib/Projects/projects';
 import img from '../Home/canvas/src/img/bg.png';
 
@@ -34,7 +35,9 @@ export default class MyWork extends React.Component {
                   <div className="row h-100 justify-content-center
                   align-items-center">
                     <div className="col-auto">
-                      <PrimaryButton>View</PrimaryButton>
+                      <Link to={data.link}>
+                        <PrimaryButton>View</PrimaryButton>
+                      </Link>
                     </div>
                   </div>
                 </div>
