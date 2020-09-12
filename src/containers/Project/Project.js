@@ -2,6 +2,8 @@ import React from 'react';
 import LetsWork from '../../components/LetsWork/LetsWork';
 import Footer from '../../components/Footer/Footer';
 import {Canvas as StarCanvas} from '../Home/canvas/src/js/StarCanvas/Canvas';
+import Description from '../../utils/Description/Description';
+import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import img from '../Home/canvas/src/img/bg.png';
 import PropTypes from 'prop-types';
 
@@ -17,6 +19,9 @@ export default class Project extends React.Component {
     return (
       <section className="page">
         <div id="canvas-pad"/>
+        <Description title={this.props.project.description.title}
+          info={this.props.project.description.info}/>
+        <ImageSlider images={this.props.project.images}/>
         <LetsWork/>
         <Footer/>
       </section>

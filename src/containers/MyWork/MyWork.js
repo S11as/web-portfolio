@@ -49,7 +49,7 @@ export default class MyWork extends React.Component {
               </div>
               <div className="row justify-content-end mb-3">
                 <div className="col-auto project-description">
-                  {data.description}
+                  {data.description.preview}
                 </div>
               </div>
             </Card>,

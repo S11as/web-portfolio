@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import ScrollToTop from './utils/ScrollToTop/ScrollToTop';
 import '../node_modules/reset-css/reset.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './styles/sass/style.sass';
 
 import App from './containers/App/App';
