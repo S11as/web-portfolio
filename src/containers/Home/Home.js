@@ -1,6 +1,5 @@
 import React from 'react';
 import {Canvas as StarCanvas} from './canvas/src/js/StarCanvas/Canvas';
-import {Canvas as BubbleCanvas} from './canvas/src/js/BubbleCanvas/Canvas';
 
 import Bubbles from '../../components/Bubbles/Bubbles';
 
@@ -17,20 +16,24 @@ class Home extends React.Component {
     setInterval(() => {
       if (starCanvas.displayed) starCanvas.createStar();
     }, 1000);
-
-    const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 800});
-    setInterval(() => {
-      if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
-    }, 1000);
   }
 
   render() {
     return (
       <section className="page">
         <div id="canvas-pad"/>
-        <Bubbles>
-          <div id="bubbles"/>
-        </Bubbles>
+        <Bubbles
+          title="I design and code beautiful
+                  websites, with love and passion"
+          addition={
+            (
+              <span>
+                &quot;Web is everywhere that&apos;s why we
+                must make most of it&quot;
+              </span>
+            )
+          }
+        />
         <Skills/>
         <Projects/>
         <LetsWork/>

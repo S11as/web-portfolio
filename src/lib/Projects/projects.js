@@ -1,9 +1,12 @@
+import tech from '../Tech/tech';
 export default {
   pexBots: {
-    img: require('./img/pexbots_prev.png'),
-    images: [require('./img/pexbots1.png'), require('./img/pexbots2.png'),
-      require('./img/pexbots3.png'), require('./img/pexbots4.png'),
-      require('./img/pexbots5.png')],
+    img: require('./img/pexbots/pexbots_prev.png'),
+    images: [require('./img/pexbots/pexbots1.png'),
+      require('./img/pexbots/pexbots2.png'),
+      require('./img/pexbots/pexbots3.png'),
+      require('./img/pexbots/pexbots4.png'),
+      require('./img/pexbots/pexbots5.png')],
     category: 'My own project',
     description: {
       preview: 'Wonderful provider of game bots',
@@ -15,12 +18,40 @@ export default {
     },
     title: 'Pex Bots',
     link: '/project/pexBots',
+    innerLink: 'http://pexbots.com/',
+    stack: {
+      frontEnd: {
+        title: 'Front End',
+        items: [
+          tech.vue,
+          tech.css,
+          tech.webpack,
+        ],
+      },
+      backEnd: {
+        title: 'Back End',
+        items: [
+          tech.node,
+          tech.express,
+          tech.mongo,
+        ],
+      },
+      design: {
+        title: 'Design',
+        items: [
+          tech.adobePh,
+          tech.adobeIl,
+        ],
+      },
+    },
   },
   vintik: {
-    img: require('./img/vintik_prev.png'),
-    images: [require('./img/vintik1.png'), require('./img/vintik2.png'),
-      require('./img/vintik3.png'), require('./img/vintik4.png'),
-      require('./img/vintik5.png')],
+    img: require('./img/vintik/vintik_prev.png'),
+    images: [require('./img/vintik/vintik1.png'),
+      require('./img/vintik/vintik2.png'),
+      require('./img/vintik/vintik3.png'),
+      require('./img/vintik/vintik4.png'),
+      require('./img/vintik/vintik5.png')],
     category: 'Commercial project',
     description: {
       preview: 'Business card website',
@@ -31,12 +62,28 @@ export default {
     },
     title: 'Vintik',
     link: '/project/vintik',
-  },
-  myPortfolio: {
-    img: require('./img/pexbots_prev.png'),
-    category: 'My own project',
-    description: 'A place to share my work with the world, nothing more to say',
-    title: 'Portfolio',
-    link: '/project/myPortfolio',
+    stack: {
+      frontEnd: {
+        title: 'Front End',
+        items: [
+          tech.vanillaJs,
+          tech.css,
+          tech.webpack,
+        ],
+      },
+      backEnd: {
+        title: 'Back End',
+        items: [
+          tech.wordpress,
+          tech.mysqlPostgre,
+        ],
+      },
+      design: {
+        title: 'Design',
+        items: [
+          tech.adobePh,
+        ],
+      },
+    },
   },
 };

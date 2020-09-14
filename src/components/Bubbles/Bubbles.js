@@ -2,12 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import bg from './img/bubbles-bg.png';
+import {Canvas as BubbleCanvas} from
+  '../../containers/Home/canvas/src/js/BubbleCanvas/Canvas';
 export default class Bubbles extends React.Component {
   setHeight() {
     const container = document.getElementById('description-wrapper');
     const img = document.getElementById('bubbles-bg');
     container.style.height = img.height+'px';
   }
+  componentDidMount() {
+    const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 800});
+    setInterval(() => {
+      if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
+    }, 1000);
+  }
+
   render() {
     return (
       <section>
@@ -18,19 +27,17 @@ export default class Bubbles extends React.Component {
             <div className="col-7 description-inner-wrapper">
               <div className="row justify-content-center">
                 <div className="col-auto description-title">
-                  I design and code beautiful
-                  websites, with love and passion
+                  {this.props.title}
                 </div>
               </div>
               <div className="row justify-content-center">
                 <div className="col-auto description-quote">
-                  &quot;Web is everywhere that&apos;s why we
-                  must make most of it&quot;
+                  {this.props.addition}
                 </div>
               </div>
             </div>
             <div className="col">
-              {this.props.children}
+              <div id="bubbles"/>
             </div>
           </div>
         </div>
@@ -40,5 +47,6 @@ export default class Bubbles extends React.Component {
 }
 
 Bubbles.propTypes = {
-  children: PropTypes.node,
+  title: PropTypes.string,
+  addition: PropTypes.node,
 };
