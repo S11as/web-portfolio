@@ -22,7 +22,7 @@ export default class MyWork extends React.Component {
       if (projects.hasOwnProperty(project)) {
         const data = projects[project];
         cards.push(
-            <Card>
+            <Card key={project}>
               <div className="row justify-content-center mb-4">
                 <div className="col-auto description-title">
                   {data.title}

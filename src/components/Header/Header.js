@@ -1,5 +1,4 @@
 import React from 'react';
-import anime from 'animejs';
 import {withRouter} from 'react-router-dom';
 
 import RedWrapper from '../../utils/RedWrapper/RedWrapper';
@@ -9,6 +8,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 import navigation from '../../lib/Navigation/navigation';
+
+import anime from 'animejs';
 
 class Header extends React.Component {
   constructor(props) {
@@ -78,7 +79,9 @@ class Header extends React.Component {
       )}>
         <div className="container">
           <div className="row justify-content-around">
-            <RedWrapper font={22} active={true}><span>Silas</span></RedWrapper>
+            <RedWrapper font={22} active={true}>
+              <span>Silas</span>
+            </RedWrapper>
             <div className="col-auto">
               <nav className="row">
                 {this.state.nav}

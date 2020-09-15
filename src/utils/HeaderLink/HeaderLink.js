@@ -10,7 +10,7 @@ export default class HeaderLink extends React.Component {
 
   render() {
     return (
-      <Link to={this.props.to} onClick={this.props.test}>
+      <Link to={this.props.to} onClick={this.props.test} className="h-link">
         <RedWrapper active={this.props.active}>
           {this.props.children}
         </RedWrapper>
