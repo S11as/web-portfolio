@@ -14,9 +14,8 @@ export default function Card({children}) {
 
   useEffect(()=>{
     if (inView) {
-      // card->card-inner->row->inner-wrapper->elements
-      const children = entry.target.children[1].children[0].children[0]
-          .children;
+      // card->card-inner->row->elements
+      const children = entry.target.children[1].children[0].children;
       const timeline = anime.timeline();
       timeline.add({
         targets: entry.target,

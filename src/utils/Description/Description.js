@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import bg from './img/bg.png';
 import PropTypes from 'prop-types';
+
+import {useInView} from 'react-intersection-observer';
+import anime from 'animejs';
 
 function Description(props) {
   function setHeight() {
@@ -8,8 +11,36 @@ function Description(props) {
     const wrapper = document.getElementById('project-description-wrapper');
     wrapper.style.height = bg.height + 'px';
   }
+  const {ref, inView, entry} = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  useEffect(()=>{
+    if (inView) {
+      const timeline = anime.timeline();
+      timeline.add({
+        targets: entry.target,
+        translateY: [300, 0],
+        duration: 800,
+        easing: 'easeInOutSine',
+      })
+          .add({
+            targets: '.project-description-title',
+            opacity: [0, 1],
+            duration: 1600,
+            easing: 'easeInOutSine',
+          }, '-=200')
+          .add({
+            targets: '.project-description-inner',
+            opacity: [0, 1],
+            duration: 1000,
+            easing: 'easeInOutSine',
+          }, '-=600');
+    }
+  });
+
   return (
-    <section>
+    <section ref={ref} className="description-anime">
       <img src={bg} className="bg-image" id="description-bg"
         onLoad={setHeight.bind(this)}/>
       <div className="container" id="project-description-wrapper">

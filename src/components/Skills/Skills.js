@@ -14,22 +14,26 @@ function Skills() {
     const items = [];
     for (const [index, item] of card.items.entries()) {
       items.push(
-          <div className={classNames(
-              'col-auto',
-              'skill',
-              {'mt-4': index === 0},
-          )} key={index}>
-            <img src={item.image} alt="" width="40" height="40"/>
-            <span>{item.text}</span>
+          <div className='row justify-content-center'>
+            <div className={classNames(
+                'col-auto',
+                'skill',
+                {'mt-4': index === 0},
+            )} key={index}>
+              <img src={item.image} alt="" width="40" height="40"/>
+              <span>{item.text}</span>
+            </div>
           </div>,
       );
     }
     return (
-      <div className='card-inner-anime'>
-        <RedWrapper active={card.redWrapper}
-          white={true} font={25}>
-          {card.title}
-        </RedWrapper>
+      <div className='container'>
+        <div className="row justify-content-center">
+          <RedWrapper active={card.redWrapper}
+            white={true} font={25}>
+            {card.title}
+          </RedWrapper>
+        </div>
         {items}
       </div>
     );
@@ -66,21 +70,15 @@ function Skills() {
         </div>
         <div className="row justify-content-between mb-6">
           <Card>
-            <div className="row justify-content-center">
-              {createCardInner(cards.frontEnd)}
-            </div>
+            {createCardInner(cards.frontEnd)}
           </Card>
           <Card>
-            <div className="row justify-content-center">
-              {createCardInner(cards.backEnd)}
-            </div>
+            {createCardInner(cards.backEnd)}
           </Card>
         </div>
         <div className="row justify-content-center">
           <Card>
-            <div className="row justify-content-center">
-              {createCardInner(cards.design)}
-            </div>
+            {createCardInner(cards.design)}
           </Card>
         </div>
       </div>

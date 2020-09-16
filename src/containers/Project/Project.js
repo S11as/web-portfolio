@@ -32,6 +32,7 @@ export default class Project extends React.Component {
               Yes!
             </a>
           )}
+          longAnimation={true}
         />
         <LetsWork/>
         <Footer/>

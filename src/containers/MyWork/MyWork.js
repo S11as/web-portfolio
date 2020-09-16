@@ -23,33 +23,35 @@ export default class MyWork extends React.Component {
         const data = projects[project];
         cards.push(
             <Card key={project}>
-              <div className="row justify-content-center mb-4">
-                <div className="col-auto description-title">
-                  {data.title}
+              <div className="container">
+                <div className="row justify-content-center mb-4">
+                  <div className="col-auto description-title">
+                    {data.title}
+                  </div>
                 </div>
-              </div>
-              <div className="row justify-content-center position-relative
+                <div className="row justify-content-center position-relative
               mb-4">
-                <img className="col-auto" src={data.img} alt=""/>
-                <div className="mywork-hover container">
-                  <div className="row h-100 justify-content-center
+                  <img className="col-auto" src={data.img} alt=""/>
+                  <div className="mywork-hover container">
+                    <div className="row h-100 justify-content-center
                   align-items-center">
-                    <div className="col-auto">
-                      <Link to={data.link}>
-                        <PrimaryButton>View</PrimaryButton>
-                      </Link>
+                      <div className="col-auto">
+                        <Link to={data.link}>
+                          <PrimaryButton>View</PrimaryButton>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="row justify-content-end mb-4">
-                <div className="col-auto project-category">
-                  {data.category}
+                <div className="row justify-content-end mb-4">
+                  <div className="col-auto project-category">
+                    {data.category}
+                  </div>
                 </div>
-              </div>
-              <div className="row justify-content-end mb-3">
-                <div className="col-auto project-description">
-                  {data.description.preview}
+                <div className="row justify-content-end mb-3">
+                  <div className="col-auto project-description">
+                    {data.description.preview}
+                  </div>
                 </div>
               </div>
             </Card>,

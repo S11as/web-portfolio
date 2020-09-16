@@ -7,15 +7,19 @@ import {Canvas as BubbleCanvas} from
 
 import {useInView} from 'react-intersection-observer';
 import anime from 'animejs';
+import classNames from 'classnames';
 
+// eslint-disable-next-line react/prop-types
 export default function Bubbles(props) {
+  console.log(props);
   const setHeight = () =>{
     const container = document.getElementById('description-wrapper');
     const img = document.getElementById('bubbles-bg');
     container.style.height = img.height+'px';
   };
   const {ref, inView, entry} = useInView({
-    threshold: 0,
+    // eslint-disable-next-line react/prop-types
+    threshold: props.longAnimaton ? 0.2 : 0,
     triggerOnce: true,
   });
 
@@ -54,9 +58,11 @@ export default function Bubbles(props) {
 
 
   return (
-    <section ref={ref}>
+    <section ref={ref} className={classNames({
+      'bubbles-anime': props.longAnimation,
+    })}>
       <img src={bg} className="bg-image image-fluid" id="bubbles-bg"
-        onLoad={setHeight.bind(this)}/>
+        onLoad={setHeight}/>
       <div className="container description-wrapper" id="description-wrapper">
         <div className="row h-85 align-items-center">
           <div className="col-7 description-inner-wrapper">
@@ -83,4 +89,5 @@ export default function Bubbles(props) {
 Bubbles.propTypes = {
   title: PropTypes.string,
   addition: PropTypes.node,
+  longAnimation: PropTypes.bool,
 };
