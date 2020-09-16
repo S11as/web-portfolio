@@ -14,7 +14,7 @@ export default function Bubbles(props) {
     const img = document.getElementById('bubbles-bg');
     container.style.height = img.height+'px';
   };
-  const {ref, inView} = useInView({
+  const {ref, inView, entry} = useInView({
     threshold: 0,
     triggerOnce: true,
   });
@@ -30,7 +30,7 @@ export default function Bubbles(props) {
     if (inView) {
       const timeline = anime.timeline();
       timeline.add({
-        targets: '.bubbles-anime',
+        targets: entry.target,
         translateY: [300, 0],
         duration: 600,
         easing: 'easeInOutSine',
@@ -54,7 +54,7 @@ export default function Bubbles(props) {
 
 
   return (
-    <section ref={ref} className="bubbles-anime">
+    <section ref={ref}>
       <img src={bg} className="bg-image image-fluid" id="bubbles-bg"
         onLoad={setHeight.bind(this)}/>
       <div className="container description-wrapper" id="description-wrapper">

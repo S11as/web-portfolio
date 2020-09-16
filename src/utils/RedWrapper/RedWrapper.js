@@ -5,11 +5,11 @@ import classNames from 'classnames';
 class RedWrapper extends React.Component {
   render() {
     return (
-      <div className={classNames({
-        'col-auto': true,
-        'red-wrapper-default': true,
-        'red-wrapper': this.props.active || this.props.white,
-      })} style={{fontSize: this.props.font}}>
+      <div className={classNames(this.props.className,
+          {'col-auto': true,
+            'red-wrapper-default': true,
+            'red-wrapper': this.props.active || this.props.white,
+          })} style={{fontSize: this.props.font}}>
         <div className="row">
           <div className="col red-wrapper-text">
             {this.props.children}
@@ -31,6 +31,7 @@ RedWrapper.propTypes = {
   font: PropTypes.number,
   white: PropTypes.bool,
   children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default RedWrapper;

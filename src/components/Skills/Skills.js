@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Card from '../Card/Card';
 import RedWrapper from '../../utils/RedWrapper/RedWrapper';
 import classNames from 'classnames';
 
 import img from './img/skills-bg.png';
 import cards from './cards';
-class Skills extends React.Component {
-  createCardInner(card) {
+
+import {useInView} from 'react-intersection-observer';
+import anime from 'animejs';
+
+function Skills() {
+  const createCardInner = (card) => {
     const items = [];
     for (const [index, item] of card.items.entries()) {
       items.push(
-          <div className={classNames('col-auto', 'skill',
+          <div className={classNames(
+              'col-auto',
+              'skill',
               {'mt-4': index === 0},
           )} key={index}>
             <img src={item.image} alt="" width="40" height="40"/>
@@ -19,48 +25,67 @@ class Skills extends React.Component {
       );
     }
     return (
-      <div>
-        <RedWrapper active={card.redWrapper} white={true} font={25}>
+      <div className='card-inner-anime'>
+        <RedWrapper active={card.redWrapper}
+          white={true} font={25}>
           {card.title}
         </RedWrapper>
         {items}
       </div>
     );
-  }
-
-  render() {
-    return (
-      <section>
-        <img src={img} className="bg-image"/>
-        <div className="container skills-wrapper">
-          <div className="row justify-content-center skill-headline">
-            <div className="col-auto">
+  };
+  const {ref, inView, entry} = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  useEffect(()=>{
+    if (inView) {
+      const timeline = anime.timeline();
+      timeline.add({
+        targets: entry.target,
+        translateY: [300, 0],
+        duration: 600,
+        easing: 'easeInOutSine',
+      })
+          .add({
+            targets: '.skill-headline',
+            opacity: [0, 1],
+            duration: 1600,
+            easing: 'easeInOutSine',
+          }, '-=200');
+    }
+  });
+  return (
+    <section ref={ref}>
+      <img src={img} className="bg-image"/>
+      <div className="container skills-wrapper">
+        <div className="row justify-content-center skill-headline">
+          <div className="col-auto">
               My skills
-            </div>
-          </div>
-          <div className="row justify-content-between mb-6">
-            <Card>
-              <div className="row justify-content-center">
-                {this.createCardInner(cards.frontEnd)}
-              </div>
-            </Card>
-            <Card>
-              <div className="row justify-content-center">
-                {this.createCardInner(cards.backEnd)}
-              </div>
-            </Card>
-          </div>
-          <div className="row justify-content-center">
-            <Card>
-              <div className="row justify-content-center">
-                {this.createCardInner(cards.design)}
-              </div>
-            </Card>
           </div>
         </div>
-      </section>
-    );
-  }
+        <div className="row justify-content-between mb-6">
+          <Card>
+            <div className="row justify-content-center">
+              {createCardInner(cards.frontEnd)}
+            </div>
+          </Card>
+          <Card>
+            <div className="row justify-content-center">
+              {createCardInner(cards.backEnd)}
+            </div>
+          </Card>
+        </div>
+        <div className="row justify-content-center">
+          <Card>
+            <div className="row justify-content-center">
+              {createCardInner(cards.design)}
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Skills;
