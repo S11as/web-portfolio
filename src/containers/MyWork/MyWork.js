@@ -1,21 +1,14 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import LetsWork from '../../components/LetsWork/LetsWork';
-import {Canvas as StarCanvas} from '../Home/canvas/src/js/StarCanvas/Canvas';
+
 import Card from '../../components/Card/Card';
 import PrimaryButton from '../../utils/PrimaryButton/PrimaryButton';
 import {Link} from 'react-router-dom';
+import StarCanvas from '../../components/Canvas/StarCanvas';
 import projects from '../../lib/Projects/projects';
-import img from '../Home/canvas/src/img/bg.png';
 
 export default class MyWork extends React.Component {
-  componentDidMount() {
-    const starCanvas = new StarCanvas('canvas-pad', 'All projects in one ' +
-      'place', img);
-    setInterval(() => {
-      if (starCanvas.displayed) starCanvas.createStar();
-    }, 1000);
-  }
   render() {
     const cards = [];
     for (const project in projects) {
@@ -60,7 +53,10 @@ export default class MyWork extends React.Component {
     }
     return (
       <section className="page">
-        <div id="canvas-pad"/>
+        <StarCanvas
+          text={'All projects in one place'}
+          quote={'“If you have any idea, start now, don’t wait.”'}
+        />
         <div className="container mywork-wrapper">
           <div className="row justify-content-between">
             {cards}

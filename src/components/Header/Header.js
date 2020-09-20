@@ -3,6 +3,8 @@ import {withRouter} from 'react-router-dom';
 
 import RedWrapper from '../../utils/RedWrapper/RedWrapper';
 import HeaderLink from '../../utils/HeaderLink/HeaderLink';
+import {Link} from 'react-router-dom';
+
 
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -80,7 +82,7 @@ class Header extends React.Component {
         <div className="container">
           <div className="row justify-content-around">
             <RedWrapper font={22} active={true}>
-              <span>Silas</span>
+              <Link to='/'>Silas</Link>
             </RedWrapper>
             <div className="col-auto">
               <nav className="row">

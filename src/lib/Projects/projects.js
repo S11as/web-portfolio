@@ -18,7 +18,7 @@ export default {
     },
     title: 'Pex Bots',
     link: '/project/pexBots',
-    innerLink: 'http://pexbots.com/',
+    innerLink: 'https://pexbots.com/',
     stack: {
       frontEnd: {
         title: 'Front End',
@@ -62,6 +62,7 @@ export default {
     },
     title: 'Vintik',
     link: '/project/vintik',
+    innerLink: 'http://razbor-nn.ru/',
     stack: {
       frontEnd: {
         title: 'Front End',

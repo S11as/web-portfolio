@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import bg from './img/bubbles-bg.png';
 import {Canvas as BubbleCanvas} from
-  '../../containers/Home/canvas/src/js/BubbleCanvas/Canvas';
+  '../Canvas/canvas/src/js/BubbleCanvas/Canvas';
 
 import {useInView} from 'react-intersection-observer';
 import anime from 'animejs';
@@ -11,7 +11,6 @@ import classNames from 'classnames';
 
 // eslint-disable-next-line react/prop-types
 export default function Bubbles(props) {
-  console.log(props);
   const setHeight = () =>{
     const container = document.getElementById('description-wrapper');
     const img = document.getElementById('bubbles-bg');
@@ -25,7 +24,8 @@ export default function Bubbles(props) {
 
   useEffect(()=>{
     // aka component did mount
-    const bubbleCanvas = new BubbleCanvas('bubbles', {width: 420, height: 800});
+    const bubbleCanvas = new
+    BubbleCanvas('bubbles', {width: 420, height: 800});
     setInterval(() => {
       if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
     }, 1000);
