@@ -22,7 +22,7 @@ class Home extends React.Component {
                   websites, with love and passion"
           addition={
             (
-              <span>
+              <span className="text-center d-inline-block">
                 &quot;Web is everywhere that&apos;s why we
                 must make most of it&quot;
               </span>

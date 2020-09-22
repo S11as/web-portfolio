@@ -10,16 +10,16 @@ import {useInView} from 'react-intersection-observer';
 import anime from 'animejs';
 
 function Skills() {
-  const createCardInner = (card) => {
+  const createCardInner = (card, key) => {
     const items = [];
     for (const [index, item] of card.items.entries()) {
       items.push(
-          <div className='row justify-content-center'>
+          <div className='row justify-content-center' key={index}>
             <div className={classNames(
                 'col-auto',
                 'skill',
                 {'mt-4': index === 0},
-            )} key={index}>
+            )} >
               <img src={item.image} alt="" width="40" height="40"/>
               <span>{item.text}</span>
             </div>
@@ -68,7 +68,8 @@ function Skills() {
               My skills
           </div>
         </div>
-        <div className="row justify-content-between mb-6">
+        <div className="row justify-content-center justify-content-lg-between
+        mb-6">
           <Card>
             {createCardInner(cards.frontEnd)}
           </Card>

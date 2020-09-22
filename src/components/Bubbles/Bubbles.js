@@ -65,7 +65,7 @@ export default function Bubbles(props) {
         onLoad={setHeight}/>
       <div className="container description-wrapper" id="description-wrapper">
         <div className="row h-85 align-items-center">
-          <div className="col-7 description-inner-wrapper">
+          <div className="col col-xl-7 description-inner-wrapper">
             <div className="row justify-content-center">
               <div className="col-auto description-title">
                 {props.title}

@@ -62,7 +62,8 @@ function Stack(props) {
               Project essentials
           </div>
         </div>
-        <div className="row justify-content-between mb-6">
+        <div className="row justify-content-center
+        justify-content-lg-between mb-6">
           <Card>
             <div className="row justify-content-center">
               {createCardInner(props.stack.frontEnd)}

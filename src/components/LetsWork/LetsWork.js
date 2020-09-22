@@ -2,9 +2,12 @@ import React, {useEffect} from 'react';
 
 import {useInView} from 'react-intersection-observer';
 import anime from 'animejs';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import {withResizeDetector} from 'react-resize-detector';
 
 import bg from './img/bg.png';
-export default function LetsWork() {
+function LetsWork(props) {
   const setHeight = () => {
     const container = document.getElementById('work-wrapper');
     const img = document.getElementById('work-bg');
@@ -42,8 +45,12 @@ export default function LetsWork() {
       <img src={bg} className="bg-image image-fluid" id="work-bg"
         onLoad={setHeight}/>
       <div className="container" id="work-wrapper">
-        <div className="row h-85 align-items-center">
-          <div className="col-7">
+        <div className={classNames('row', {
+          'align-items-center': props.width > 760,
+          'h-85': props.width > 760,
+          'p-200': props.width < 760,
+        })}>
+          <div className="col-md-7 col-12">
             <div className="row justify-content-start">
               <div className="col-auto work-headline">
                   Let&apos;s Work Together
@@ -75,3 +82,8 @@ export default function LetsWork() {
     </section>
   );
 }
+
+LetsWork.propTypes = {
+  width: PropTypes.number,
+};
+export default withResizeDetector(LetsWork);

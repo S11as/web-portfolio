@@ -58,7 +58,8 @@ export default class MyWork extends React.Component {
           quote={'“If you have any idea, start now, don’t wait.”'}
         />
         <div className="container mywork-wrapper">
-          <div className="row justify-content-between">
+          <div className="row justify-content-center
+          justify-content-lg-between">
             {cards}
           </div>
         </div>

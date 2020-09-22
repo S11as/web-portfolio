@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
         <div className="container-fluid">
           <div className="conainer">
             <div className="row justify-content-center">
-              <div className="col-auto">
+              <div className="col-auto text-center">
                 C {new Date().getFullYear()} Kirill Lakhov. All rights reserved
               </div>
             </div>

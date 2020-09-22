@@ -5,8 +5,12 @@ import PrimaryButton from '../../utils/PrimaryButton/PrimaryButton';
 import {useInView} from 'react-intersection-observer';
 import anime from 'animejs';
 
+import classNames from 'classnames';
+import {withResizeDetector} from 'react-resize-detector';
+import PropTypes from 'prop-types';
+
 import bg from './img/bg.png';
-export default function Projects() {
+function Projects(props) {
   const setHeight = ()=> {
     const container = document.getElementById('projects-wrapper');
     const img = document.getElementById('projects-bg');
@@ -58,8 +62,12 @@ export default function Projects() {
       <img src={bg} className="bg-image image-fluid" id="projects-bg"
         onLoad={setHeight}/>
       <div className="container" id="projects-wrapper">
-        <div className="row h-85 align-items-center">
-          <div className="col-7">
+        <div className={classNames('row', {
+          'h-85': props.width > 1200,
+          'align-items-center': props.width > 1200,
+          'p-200': props.width < 1200,
+        })}>
+          <div className="col-xl-7 col-12">
             <div className="row justify-content-center">
               <div className="col-auto description-title">
                   Projects
@@ -71,9 +79,14 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className="col top-offset">
+          <div className={classNames('col',
+              {
+                'top-offset': props.width > 1200,
+              })}>
             <div className="row justify-content-center">
-              <h6 className="col-auto work-anime">
+              <h6 className={classNames('col-auto', 'work-anime', 'mb-5', {
+                'mt-100': props.width < 1200,
+              })}>
                   All my work  in one place
               </h6>
             </div>
@@ -88,3 +101,9 @@ export default function Projects() {
     </section>
   );
 }
+
+Projects.propTypes = {
+  width: PropTypes.number,
+};
+
+export default withResizeDetector(Projects);
