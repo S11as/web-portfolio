@@ -1,7 +1,12 @@
 .star-text
   color: white
-  font-size: 40px
+  font-size: 32px
   position: relative
+  padding: 0 20px
+  text-align: center
+  @include media-breakpoint-up(md)
+    font-size: 40px
+
   .line
     position: absolute
     height: 100%
@@ -14,9 +19,11 @@
     line-height: 1em
 
 .star-quote
+  padding: 0 20px
   margin-top: 55px
   font-size: 28px
   color: $gray
+  text-align: center
   .letter
     transform-origin: 50% 100%
     display: inline-block
@@ -35,3 +42,13 @@
   flex-direction: column
   justify-content: center
   align-items: center
+
+#star-canvas
+  overflow: hidden
+  .konvajs-content
+    overflow: hidden
+
+.bubbles-wrapper
+  display: none
+  @include media-breakpoint-up(xl)
+    display: block

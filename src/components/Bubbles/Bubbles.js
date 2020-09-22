@@ -24,8 +24,8 @@ export default function Bubbles(props) {
 
   useEffect(()=>{
     // aka component did mount
-    const bubbleCanvas = new
-    BubbleCanvas('bubbles', {width: 420, height: 800});
+    const bubbleCanvas = new BubbleCanvas('bubbles',
+        {width: 420, height: 800});
     setInterval(() => {
       if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
     }, 1000);
@@ -77,7 +77,7 @@ export default function Bubbles(props) {
               </div>
             </div>
           </div>
-          <div className="col">
+          <div className="col bubbles-wrapper">
             <div id="bubbles"/>
           </div>
         </div>
