@@ -32,8 +32,12 @@ export default {
     image: require('./img/wordpress.png'),
   },
   mysqlPostgre: {
-    text: 'MySQL/PostgreSQL ',
+    text: 'MySQL',
     image: require('./img/mysql.png'),
+  },
+  firebase: {
+    text: 'Firebase',
+    image: require('./img/firebase.png'),
   },
   mongo: {
     text: 'MongoDB',

@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import {useInView} from 'react-intersection-observer';
 import anime from 'animejs';
 
-
+import classNames from 'classnames';
 import img from './img/card-bg.png';
 // eslint-disable-next-line react/prop-types
 export default function Card({children}) {
@@ -35,7 +35,9 @@ export default function Card({children}) {
   return (
     <div className="card card-anime" ref={ref}>
       <img src={img} className="position-absolute"/>
-      <div className="card-inner">
+      <div className={classNames('card-inner', {
+        'd-none': !inView,
+      })}>
         {children}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import tech from '../Tech/tech';
 export default {
-  pexBots: {
+  'pex-bots': {
     img: require('./img/pexbots/pexbots_prev.png'),
     images: [require('./img/pexbots/pexbots1.png'),
       require('./img/pexbots/pexbots2.png'),
@@ -17,7 +17,7 @@ export default {
         'This project was pretty interesting due to Python integration',
     },
     title: 'Pex Bots',
-    link: '/project/pexBots',
+    link: '/project/pex-bots',
     innerLink: 'https://pexbots.com/',
     stack: {
       frontEnd: {
@@ -45,7 +45,7 @@ export default {
       },
     },
   },
-  vintik: {
+  'vintik': {
     img: require('./img/vintik/vintik_prev.png'),
     images: [require('./img/vintik/vintik1.png'),
       require('./img/vintik/vintik2.png'),
@@ -77,6 +77,45 @@ export default {
         items: [
           tech.wordpress,
           tech.mysqlPostgre,
+        ],
+      },
+      design: {
+        title: 'Design',
+        items: [
+          tech.adobePh,
+        ],
+      },
+    },
+  },
+  'blind-typer': {
+    img: require('./img/blind_typer/blind_typer_prev.png'),
+    images: [require('./img/blind_typer/blind_typer1.png'),
+      require('./img/blind_typer/blind_typer2.png'),
+      require('./img/blind_typer/blind_typer3.png'),
+    ],
+    category: 'My own project',
+    description: {
+      preview: 'Typing educational tool',
+      title: 'Blind Typer',
+      info: 'This tool was created to train blind typing. There are a lot of '+
+        'tools for that around the Internet, but none of what I`ve seen had '+
+        'endless word generation, so I decided to implement it by myself.',
+    },
+    title: 'Blind Typer',
+    link: '/project/blind-typer',
+    innerLink: 'https://s11as.github.io/blind-typer',
+    stack: {
+      frontEnd: {
+        title: 'Front End',
+        items: [
+          tech.react,
+          tech.css,
+        ],
+      },
+      backEnd: {
+        title: 'Back End',
+        items: [
+          tech.firebase,
         ],
       },
       design: {
