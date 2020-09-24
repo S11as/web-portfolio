@@ -13,7 +13,7 @@ export default function Card({children}) {
   });
 
   useEffect(()=>{
-    if (inView) {
+    if (inView && window.innerWidth > 600) {
       // card->card-inner->row->elements
       const children = entry.target.children[1].children[0].children;
       const timeline = anime.timeline();

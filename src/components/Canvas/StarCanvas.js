@@ -32,7 +32,7 @@ function StarCanvas(props) {
           }).add({
             targets: '.star-text .line',
             translateX: [0, document.querySelector('.star-text .letters')
-                .getBoundingClientRect().width + 10],
+                .getBoundingClientRect().width + 30],
             easing: 'easeOutExpo',
             duration: 1800,
             delay: 100,
@@ -57,10 +57,15 @@ function StarCanvas(props) {
           }, '-=1000').play();
     }
 
-    const starCanvas = new StarCanvasModel('star-canvas', img);
-    setInterval(() => {
-      if (starCanvas.displayed) starCanvas.createStar();
-    }, 1000);
+    if (width > 600) {
+      const starCanvas = new StarCanvasModel('star-canvas', img);
+      setInterval(() => {
+        if (starCanvas.displayed) starCanvas.createStar();
+      }, 1000);
+    } else {
+      new StarCanvasModel('star-canvas', img,
+          window.innerWidth, window.innerHeight);
+    }
   });
   return (
     <div className="canvas-wrapper">

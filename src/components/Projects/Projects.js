@@ -21,7 +21,7 @@ function Projects(props) {
     triggerOnce: true,
   });
   useEffect(()=>{
-    if (inView) {
+    if (inView && props.width > 600) {
       const timeline = anime.timeline();
       timeline.add({
         targets: entry.target,

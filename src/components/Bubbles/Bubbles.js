@@ -24,14 +24,17 @@ export default function Bubbles(props) {
 
   useEffect(()=>{
     // aka component did mount
-    const bubbleCanvas = new BubbleCanvas('bubbles',
-        {width: 420, height: 800});
-    setInterval(() => {
-      if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
-    }, 1000);
+    const width = window.innerWidth;
+    if (width>600) {
+      const bubbleCanvas = new BubbleCanvas('bubbles',
+          {width: 420, height: 800});
+      setInterval(() => {
+        if (bubbleCanvas.displayed) bubbleCanvas.createBubble();
+      }, 1000);
+    }
 
     // intersect viewer
-    if (inView) {
+    if (inView && width>600) {
       const timeline = anime.timeline();
       timeline.add({
         targets: entry.target,
