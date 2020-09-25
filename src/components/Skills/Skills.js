@@ -43,7 +43,8 @@ function Skills() {
     triggerOnce: true,
   });
   useEffect(()=>{
-    if (inView) {
+    const width = window.innerWidth;
+    if (inView && width > 600) {
       const timeline = anime.timeline();
       timeline.add({
         targets: entry.target,

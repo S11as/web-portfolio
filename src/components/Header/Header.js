@@ -73,9 +73,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className={classNames({
-        'container-fluid': true,
-        'nav-wrapper': true,
+      <div className={classNames( 'nav-wrapper', {
         'nav-wrapper-black': this.state.isBlack,
       },
       )}>
