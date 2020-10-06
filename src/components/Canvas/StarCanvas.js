@@ -5,6 +5,7 @@ import img from './canvas/src/img/bg.png';
 
 import anime from 'animejs';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 // import {withResizeDetector} from 'react-resize-detector';
 
@@ -22,6 +23,11 @@ function StarCanvas(props) {
           /[^ ]/g,
           '<span class=\'letter\'>$&</span>',
       );
+      let offset = -10;
+      if (!sessionStorage.getItem('offset')) {
+        sessionStorage.setItem('offset', offset);
+        offset = 40;
+      }
       anime.timeline()
           .add({
             targets: '.star-text .line',
@@ -31,8 +37,8 @@ function StarCanvas(props) {
             duration: 1000,
           }).add({
             targets: '.star-text .line',
-            translateX: [0, document.querySelector('.star-text .letters')
-                .getBoundingClientRect().width + 30],
+            translateX: [0, document.querySelector('.star-text')
+                .getBoundingClientRect().width + offset],
             easing: 'easeOutExpo',
             duration: 1800,
             delay: 100,
@@ -70,10 +76,10 @@ function StarCanvas(props) {
   return (
     <div className="canvas-wrapper">
       <div id='star-canvas'/>
-      <div className="canvas-text-wrapper">
+      <div className={classNames('canvas-text-wrapper')}>
         <h1 className='star-text'>
           {width > 600 &&
-            <span className='line'/>
+          <span className='line'/>
           }
           <span className='letters'>{props.text}</span>
         </h1>
