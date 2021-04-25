@@ -91,7 +91,7 @@ function Projects(props) {
               </h6>
             </div>
             <div className="row justify-content-center">
-              <Link to="/" className="col-auto link-anime">
+              <Link to="/projects" className="col-auto link-anime">
                 <PrimaryButton>Let&apos;s see</PrimaryButton>
               </Link>
             </div>

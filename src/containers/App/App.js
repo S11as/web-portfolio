@@ -4,18 +4,20 @@ import Home from '../Home/Home';
 import Header from '../../components/Header/Header';
 import MyWork from '../MyWork/MyWork';
 import ProjectWrapper from '../Project/ProjectWrapper';
+import Footer from '../../components/Footer/Footer';
 
 class App extends React.Component {
   render() {
     return (
-      <main>
+      <React.Fragment>
         <Header/>
-        <div className="app">
+        <main className="app">
           <Route exact={true} path="/" component={Home}/>
           <Route exact={true} path="/projects" component={MyWork}/>
           <Route exact={true} path="/project/:name" component={ProjectWrapper}/>
-        </div>
-      </main>
+        </main>
+        <Footer/>
+      </React.Fragment>
     );
   }
 }

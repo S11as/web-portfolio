@@ -73,7 +73,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className={classNames( 'nav-wrapper', {
+      <header className={classNames( 'nav-wrapper', {
         'nav-wrapper-black': this.state.isBlack,
       },
       )}>
@@ -89,7 +89,7 @@ class Header extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }

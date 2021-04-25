@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../components/Footer/Footer';
 import LetsWork from '../../components/LetsWork/LetsWork';
 
 import Card from '../../components/Card/Card';
@@ -52,20 +51,19 @@ export default class MyWork extends React.Component {
       }
     }
     return (
-      <section className="page">
+      <React.Fragment>
         <StarCanvas
           text={'All projects in one place'}
           quote={'“If you have any idea, start now, don’t wait.”'}
         />
-        <div className="container mywork-wrapper">
+        <section className="container mywork-wrapper">
           <div className="row justify-content-center
           justify-content-lg-between">
             {cards}
           </div>
-        </div>
+        </section>
         <LetsWork/>
-        <Footer/>
-      </section>
+      </React.Fragment>
     );
   }
 }

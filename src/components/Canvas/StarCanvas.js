@@ -74,7 +74,7 @@ function StarCanvas(props) {
     }
   });
   return (
-    <div className="canvas-wrapper">
+    <section className="canvas-wrapper">
       <div id='star-canvas'/>
       <div className={classNames('canvas-text-wrapper')}>
         <h1 className='star-text'>
@@ -87,7 +87,7 @@ function StarCanvas(props) {
           <span className='letters'>{props.quote}</span>
         </h2>
       </div>
-    </div>
+    </section>
   );
 }
 

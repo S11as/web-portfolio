@@ -1,6 +1,5 @@
 import React from 'react';
 import LetsWork from '../../components/LetsWork/LetsWork';
-import Footer from '../../components/Footer/Footer';
 import Description from '../../utils/Description/Description';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import Stack from '../../components/Stack/Stack';
@@ -11,7 +10,7 @@ import PropTypes from 'prop-types';
 export default class Project extends React.Component {
   render() {
     return (
-      <section className="page">
+      <React.Fragment>
         <StarCanvas
           text={this.props.project.description.title}
           quote={'“Imagine. Create Design. Build. Deploy.”'}
@@ -30,8 +29,7 @@ export default class Project extends React.Component {
           longAnimation={true}
         />
         <LetsWork/>
-        <Footer/>
-      </section>
+      </React.Fragment>
     );
   }
 }
